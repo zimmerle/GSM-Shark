@@ -1,0 +1,69 @@
+/* Combo box */
+
+QComboBox
+{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px;
+    min-width: 6em;
+    background-color: "white";
+    height: 16px;
+}
+
+QComboBox::drop-down
+{
+    width: 15px;
+    border-left-width: 0px;
+}
+
+QComboBox::down-arrow
+{
+    image: url(/Users/zimmerle/core/gsmdog/downarrow.png);
+}
+
+QComboBox::down-arrow:on
+{
+    top: 0px;
+    left: 0px;
+}
+
+QComboBox QAbstractItemView
+{
+    color: "black";
+    selection-color: "blue";
+}
+
+
+/* line edit */
+QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    background: white;
+    height: 18px;
+    width: 200px;
+}
+
+
+/* push button */
+QPushButton {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+		stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+    height: 18px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+			stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
