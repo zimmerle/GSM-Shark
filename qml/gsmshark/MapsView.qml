@@ -6,8 +6,19 @@ import QtDesktop 0.1
 
 Rectangle {
 
+    /* Guess the user initial geolocation via ip address */
+    Ip2GeoLocation {
+        id: geolocation
+        onReadyChanged: {
+		map.center.latitude = latitude
+		map.center.longitude = longitude
+		zoom.value = 8
+	}
+    }
+
+    /* Zoom component */
     MapsZoom {
-        id: zoomContainer
+        id: zoom
         width: 200
         height: 20
         opacity: 1
@@ -17,14 +28,13 @@ Rectangle {
         x: mainWindow.width - 20 - width
         y: mainWindow.height - 10 - height
 
-        target: mapsView
+        target: map
     }
 
+    /* Map component */
     Map {
-        id: mapsView
+        id: map
         z: 1
-
-        signal changeZoom(int newLevel)
 
         plugin : Plugin {
             name : "nokia"
@@ -39,11 +49,8 @@ Rectangle {
             longitude: 0
         }
         opacity: 1
-        onOpacityChanged: {
-            startupFade2.start()
-        }
 
-        mapType: Map.SatelliteMapDay
+	mapType: Map.SatelliteMapDay
 
         MapMouseArea {
             property int lastX : -1
@@ -62,7 +69,7 @@ Rectangle {
                     if ((lastX != -1) && (lastY != -1)) {
                         var dx = mouse.x - lastX
                         var dy = mouse.y - lastY
-                        mapsView.pan(-dx, -dy)
+                        map.pan(-dx, -dy)
                     }
                     lastX = mouse.x
                     lastY = mouse.y

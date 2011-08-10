@@ -28,12 +28,6 @@ Rectangle {
         }
     }
 
-    /* Guess the user initial geolocation via ip address */
-    Ip2GeoLocation {
-        id: geolocation
-        onReadyChanged: console.log("ahahahhaha.")
-    }
-
     /* background */
     Image {
         id: background_mainview
@@ -45,6 +39,30 @@ Rectangle {
         fillMode: Image.TileHorizontally
     }
 
+    /* Maps view */
+    MapsView {
+        id: mapsView
+        x: 0
+        y: 0
+        width: parent.width
+        height: parent.height
+
+        opacity: 1
+    }
+
+    /* List View*/
+    ListView {
+        id: listView
+        x: 0
+        y: 0
+        width: parent.width
+        height: parent.height
+
+        opacity: 0
+    }
+}
+
+/*
     ParallelAnimation {
         id: switchViews
         NumberAnimation {
@@ -67,25 +85,4 @@ Rectangle {
         }
     }
 
-    /* Maps view */
-    MapsView {
-        id: mapsContainer
-        x: 0
-        y: 0
-        width: parent.width
-        height: parent.height
-
-        opacity: 1
-    }
-
-    /* List View*/
-    ListView {
-        id: listView
-        x: 0
-        y: 0
-        width: parent.width
-        height: parent.height
-
-        opacity: 0
-    }
-}
+*/

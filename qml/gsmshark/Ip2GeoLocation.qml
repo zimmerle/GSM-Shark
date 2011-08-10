@@ -2,8 +2,9 @@ import QtQuick 1.0
 
 Item {
     property bool ready: false
-    property real latitude: 0
-    property real longitude: 0
+    property real latitude: 0.0
+    property real longitude: 0.0
+
 
     XmlListModel {
         source: "http://freegeoip.net/xml/"
