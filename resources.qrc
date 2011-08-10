@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>res/main.css</file>
-        <file>qml/gsmdog/main.qml</file>
+        <file>qml/gsmshark/main.qml</file>
         <file>res/fake_button_middle_separator.png</file>
         <file>res/view_button_globe_pressed.png</file>
         <file>res/view_button_globe.png</file>

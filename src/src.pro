@@ -37,4 +37,4 @@ HEADERS += \
     radiostatus.h \
     radio.h
 
-TARGET=../gsmdog
+TARGET=../gsmshark
