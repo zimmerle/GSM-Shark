@@ -18,7 +18,7 @@ QComboBox::drop-down
 
 QComboBox::down-arrow
 {
-    image: url(/Users/zimmerle/core/gsmdog/downarrow.png);
+    image: url("qrc:/res/downarrow.png");
 }
 
 QComboBox::down-arrow:on

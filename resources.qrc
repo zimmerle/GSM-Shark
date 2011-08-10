@@ -8,5 +8,10 @@
         <file>res/view_button_list_pressed.png</file>
         <file>res/view_button_list.png</file>
         <file>res/application_background.png</file>
+        <file>qml/gsmshark/Ip2GeoLocation.qml</file>
+        <file>qml/gsmshark/ListView.qml</file>
+        <file>qml/gsmshark/main.js</file>
+        <file>qml/gsmshark/MapsView.qml</file>
+        <file>qml/gsmshark/MapsZoom.qml</file>
     </qresource>
 </RCC>

@@ -1,13 +1,14 @@
 TEMPLATE=app
 
+RESOURCES += ../resources.qrc
+
+QT += declarative gui
+
 INCLUDEPATH += /usr/local/include/gnuradio
 INCLUDEPATH += /usr/local/src/uhd/host/include
 INCLUDEPATH += /opt/local/include/
 
 LIBS += -L/usr/local/lib/ -luhd -lgnuradio-core -lgnuradio-usrp -lgnuradio-uhd
-
-RESOURCES += \
-     ../resources.qrc
 
 OTHER_FILES += \
      ../res/main.css \
@@ -18,7 +19,6 @@ OTHER_FILES += \
     ../qml/gsmshark/ListView.qml \
     ../qml/gsmshark/Ip2GeoLocation.qml
 
-QT += declarative
 CONFIG(debug, debug|release):CONFIG += declarative_debug
 
 

@@ -75,7 +75,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_combo->newBandSelected();
 
     this->setStatusBar(m_statusBar);
-    m_view->setSource(QUrl("../Resources/qml/gsmshark/main.qml"));
+    m_view->setSource(QUrl("qrc:/qml/gsmshark/main.qml"));
 
     statusMessage("In our command!", 1000);
 }
