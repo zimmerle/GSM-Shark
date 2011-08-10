@@ -10,7 +10,13 @@ RESOURCES += \
      ../resources.qrc
 
 OTHER_FILES += \
-     ../res/main.css
+     ../res/main.css \
+    ../qml/gsmshark/main.js \
+    ../qml/gsmshark/MapsZoom.qml \
+    ../qml/gsmshark/MapsView.qml \
+    ../qml/gsmshark/main.qml \
+    ../qml/gsmshark/ListView.qml \
+    ../qml/gsmshark/Ip2GeoLocation.qml
 
 QT += declarative
 CONFIG(debug, debug|release):CONFIG += declarative_debug
@@ -38,3 +44,5 @@ HEADERS += \
     radio.h
 
 TARGET=../gsmshark
+
+
