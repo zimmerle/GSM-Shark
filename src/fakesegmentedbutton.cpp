@@ -3,20 +3,20 @@
  * Copyright (C) 2011 Felipe Zimmerle <felipe at zimmerle dot org>.
  * All rights reserved.
  *
- * This file is part of Gsmdog.
+ * This file is part of GsmShark.
  *
- * Gsmdog is free software: you can redistribute it and/or modify
+ * GsmShark is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Gsmdog is distributed in the hope that it will be useful,
+ * GsmShark is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Gsmdog. If not, see <http://www.gnu.org/licenses/>.
+ * along with GsmShark. If not, see <http://www.gnu.org/licenses/>.
  *
  *
  */
@@ -53,7 +53,7 @@ FakeSegmentedButtonUnity::FakeSegmentedButtonUnity(int type, QWidget *parent) :
 {
     setContentsMargins(0,0,0,0);
 
-    if (type == Gsmdog::Maps)
+    if (type == GsmShark::Maps)
     {
         m_button.load(":/res/view_button_globe.png");
         m_button_pressed.load(":/res/view_button_globe_pressed.png");
@@ -114,8 +114,8 @@ FakeSegmentedButton::FakeSegmentedButton(QWidget *parent) :
     layout->setSpacing(0);
     layout->setMargin(0);
 
-    FakeSegmentedButtonUnity *map = new FakeSegmentedButtonUnity(Gsmdog::Maps);
-    FakeSegmentedButtonUnity *list = new FakeSegmentedButtonUnity(Gsmdog::List);
+    FakeSegmentedButtonUnity *map = new FakeSegmentedButtonUnity(GsmShark::Maps);
+    FakeSegmentedButtonUnity *list = new FakeSegmentedButtonUnity(GsmShark::List);
     FakeSegmentedButtonSeparator *separator = new FakeSegmentedButtonSeparator();
 
     QObject::connect(map, SIGNAL(clicked(int)), this, SLOT(handleClick(int)));
@@ -130,7 +130,7 @@ FakeSegmentedButton::FakeSegmentedButton(QWidget *parent) :
 
     this->setLayout(layout);
 
-    emit switchView(Gsmdog::Maps);
+    emit switchView(GsmShark::Maps);
 }
 
 void FakeSegmentedButton::handleClick(int type)

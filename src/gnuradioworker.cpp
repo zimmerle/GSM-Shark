@@ -3,20 +3,20 @@
  * Copyright (C) 2011 Felipe Zimmerle <felipe at zimmerle dot org>.
  * All rights reserved.
  *
- * This file is part of Gsmdog.
+ * This file is part of GsmShark.
  *
- * Gsmdog is free software: you can redistribute it and/or modify
+ * GsmShark is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Gsmdog is distributed in the hope that it will be useful,
+ * GsmShark is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Gsmdog. If not, see <http://www.gnu.org/licenses/>.
+ * along with GsmShark. If not, see <http://www.gnu.org/licenses/>.
  *
  *
  */
@@ -33,7 +33,7 @@ double GnuradioWorker::numberOfSamples = 2285712;
 
 GnuradioWorker::GnuradioWorker(QObject *parent) :
     QThread(parent),
-    m_radioConnected(Gsmdog::Disconnected)
+    m_radioConnected(GsmShark::Disconnected)
 {
 }
 
@@ -62,13 +62,13 @@ void GnuradioWorker::setupTheRadio()
 
         m_tb->connect(m_usrp, 0, head, 0);
         m_tb->connect(head, 0, vector, 0);
-        m_radioConnected = Gsmdog::Connected;
+        m_radioConnected = GsmShark::Connected;
 
         emit radioStatus(m_radioConnected);
     }
     catch (uhd::key_error e)
     {
-        m_radioConnected = Gsmdog::Disconnected;
+        m_radioConnected = GsmShark::Disconnected;
         qDebug() << this << "::" << "Radio not found. trying again later. (Sleeping for 5 seconds.)";
         emit radioStatus(m_radioConnected);
         QThread::sleep(5);
@@ -89,12 +89,12 @@ void GnuradioWorker::run()
 {
     forever
     {
-        if (m_radioConnected != Gsmdog::Connected)
+        if (m_radioConnected != GsmShark::Connected)
         {
             setupTheRadio();
         }
 
-        if (m_radioConnected == Gsmdog::Connected && !m_queue.isEmpty())
+        if (m_radioConnected == GsmShark::Connected && !m_queue.isEmpty())
         {
             double freq = m_queue.takeFirst();
 
