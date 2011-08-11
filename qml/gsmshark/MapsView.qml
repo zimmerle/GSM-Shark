@@ -9,11 +9,35 @@ Rectangle {
     /* Guess the user initial geolocation via ip address */
     Ip2GeoLocation {
         id: geolocation
+
         onReadyChanged: {
-		map.center.latitude = latitude
-		map.center.longitude = longitude
-		zoom.value = 8
-	}
+            mapsPosition.start()
+        }
+
+        ParallelAnimation {
+
+            id: mapsPosition
+            NumberAnimation {
+                target: map;
+                property: "latitude";
+                to: geolocation.latitude;
+                duration: 1000
+            }
+            NumberAnimation {
+                target: map;
+                property: "longitude";
+                to: geolocation.longitude;
+                duration: 1000
+            }
+            NumberAnimation {
+                target: zoom;
+                property: "value";
+                to: 6;
+                duration: 1000
+            }
+        }
+
+
     }
 
     /* Zoom component */
@@ -36,6 +60,17 @@ Rectangle {
         id: map
         z: 1
 
+        property real latitude: 0
+        property real longitude: 0
+
+        onLatitudeChanged: {
+            center.latitude = latitude
+        }
+        onLongitudeChanged: {
+            center.longitude = longitude
+        }
+
+
         plugin : Plugin {
             name : "nokia"
         }
@@ -50,7 +85,7 @@ Rectangle {
         }
         opacity: 1
 
-	mapType: Map.SatelliteMapDay
+        mapType: Map.SatelliteMapDay
 
         MapMouseArea {
             property int lastX : -1

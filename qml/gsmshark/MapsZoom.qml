@@ -9,7 +9,7 @@ Rectangle {
     property real value: 0;
 
     Slider {
-	id: zoomSlider
+        id: zoomSlider
         stepSize: 0.1
         opacity: 1
         width: parent.width
@@ -21,16 +21,16 @@ Rectangle {
         onValueChanged: {
             target.zoomLevel = value;
         }
-   }
+    }
 
-   onValueChanged: {
-	zoomSlider.value = value;
-   }
+    onValueChanged: {
+        zoomSlider.value = value;
+    }
 
-   function fadeToValue (value)
-   {
-	log.console("Not implemented yet.")
-	zoomSlider.value = value;
-   }
+    function fadeToValue (value)
+    {
+        log.console("Not implemented yet.")
+        zoomSlider.value = value;
+    }
 }
 
