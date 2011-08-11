@@ -24,7 +24,7 @@ Rectangle {
     Connections {
         target: viewSwitch
         onSwitchView: {
-            Core.fadeMainView(view);
+            Core.switchMainView(view);
         }
     }
 
@@ -39,50 +39,53 @@ Rectangle {
         fillMode: Image.TileHorizontally
     }
 
-    /* Maps view */
-    MapsView {
-        id: mapsView
-        x: 0
-        y: 0
+    Rectangle {
+        id: views
+
+        property real selectedView: 0;
+
         width: parent.width
         height: parent.height
 
-        opacity: 1
+        /* Maps view */
+        MapsView {
+            id: mapsView
+            x: 0
+            y: 0
+            width: parent.width
+            height: parent.height
+
+            opacity: 1
+        }
+
+        /* List View */
+        ListView {
+            id: listView
+            x: 0
+            y: 0
+            width: parent.width
+            height: parent.height
+
+            opacity: 0
+        }
+
     }
-
-    /* List View*/
-    ListView {
-        id: listView
-        x: 0
-        y: 0
-        width: parent.width
-        height: parent.height
-
-        opacity: 0
-    }
-}
-
-/*
     ParallelAnimation {
         id: switchViews
         NumberAnimation {
-            target: mapView;
-            property: "latitude";
-            to: latitude2go;
-            duration: 1000
+            target: mapsView
+            property: "opacity";
+            to: 1-views.selectedView;
+            duration: 200
         }
+
         NumberAnimation {
-            target: mapView;
-            property: "longitude";
-            to: longitude2go;
-            duration: 1000
-        }
-        NumberAnimation {
-            target: zoom;
-            property: "value";
-            to: 6;
-            duration: 1000
+            target: listView
+            property: "opacity";
+            to: views.selectedView;
+            duration: 200
         }
     }
 
-*/
+
+}

@@ -1,22 +1,19 @@
 
-function fadeMainView(view)
+function switchMainView(view)
 {
-    if (view == mainViewOpacity)
+    if (view == views.selectedView)
         return;
 
-    fadeA.running = true;
-    fadeB.running = true;
-    if (mainViewOpacity == 1)
+
+    if (views.selectedView == 1)
     {
-        mainViewOpacity = 0;
+        views.selectedView = 0;
     }
     else
     {
-        mainViewOpacity = 1;
+        views.selectedView = 1;
     }
 
+    switchViews.running = true;
 }
 
-function func() {
-
-}
