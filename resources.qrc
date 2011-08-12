@@ -13,5 +13,6 @@
         <file>qml/gsmshark/main.js</file>
         <file>qml/gsmshark/MapsView.qml</file>
         <file>qml/gsmshark/MapsZoom.qml</file>
+        <file>res/downarrow.png</file>
     </qresource>
 </RCC>
