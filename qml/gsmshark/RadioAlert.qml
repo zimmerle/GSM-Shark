@@ -75,6 +75,7 @@ Rectangle {
             x: 5
             y: 5
             id: icon
+            smooth: true
         }
 
 

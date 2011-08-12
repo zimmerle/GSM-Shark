@@ -16,5 +16,6 @@
         <file>res/downarrow.png</file>
         <file>res/messagebox_warning.png</file>
         <file>qml/gsmshark/RadioAlert.qml</file>
+        <file>res/info.png</file>
     </qresource>
 </RCC>

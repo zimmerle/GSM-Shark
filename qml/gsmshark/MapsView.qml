@@ -44,12 +44,10 @@ Rectangle {
     MapsZoom {
         id: zoom
         width: 200
-        height: 20
-        opacity: 1
-        color: "transparent"
+        height: 30
 
         z: 2
-        x: mainWindow.width - 20 - width
+        x: mainWindow.width - 10 - width
         y: mainWindow.height - 10 - height
 
         target: map
