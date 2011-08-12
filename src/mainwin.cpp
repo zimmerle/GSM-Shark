@@ -147,3 +147,21 @@ void MainWindow::scanFinished(void)
     m_combo->setDisabled(false);
     m_scanButton->setText("Scan");
 }
+
+void MainWindow::radio(int status)
+{
+    if (status == 1)
+    {
+        m_edit->setDisabled(true);
+        m_combo->setDisabled(true);
+        m_scanButton->setDisabled(true);
+        m_scanButton->setText("Scan");
+    }
+    else
+    {
+        m_edit->setDisabled(false);
+        m_combo->setDisabled(false);
+        m_scanButton->setDisabled(false);
+        m_scanButton->setText("Scan");
+    }
+}

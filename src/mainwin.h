@@ -73,6 +73,7 @@ protected slots:
     void scanFinished(void);
     void statusMessage(QString, int);
     void startScan();
+    void radio(int status);
 
 public slots:
 };
