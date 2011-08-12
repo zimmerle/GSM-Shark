@@ -14,6 +14,7 @@ OTHER_FILES += \
      ../res/main.css \
     ../qml/gsmshark/main.js \
     ../qml/gsmshark/MapsZoom.qml \
+    ../qml/gsmshark/RadioAlert.qml \
     ../qml/gsmshark/MapsView.qml \
     ../qml/gsmshark/main.qml \
     ../qml/gsmshark/ListView.qml \

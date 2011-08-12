@@ -48,7 +48,7 @@ protected:
 signals:
     void newFreq(double);
     void scanFinished();
-    void radioStatus(int);
+    void radioStatus(int status);
 
 protected slots:
     void missing(int missing);

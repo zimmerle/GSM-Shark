@@ -67,6 +67,7 @@ signals:
     void newWindowSize(int width, int height);
     void stopScan();
     void startScan(QString);
+    void radioStatus(int status);
 
 protected slots:
     void scanFinished(void);

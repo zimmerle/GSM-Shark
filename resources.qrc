@@ -14,5 +14,7 @@
         <file>qml/gsmshark/MapsView.qml</file>
         <file>qml/gsmshark/MapsZoom.qml</file>
         <file>res/downarrow.png</file>
+        <file>res/messagebox_warning.png</file>
+        <file>qml/gsmshark/RadioAlert.qml</file>
     </qresource>
 </RCC>

@@ -18,6 +18,17 @@ Rectangle {
             mainWindow.width = width
             mainWindow.height = height
         }
+        onRadioStatus: {
+            if (status == 1)
+            {
+                radioAlert.missingRadio();
+            }
+            else
+            {
+                radioAlert.radioOk();
+            }
+        }
+
     }
 
     /* Switch the application MainView between maps and list */
@@ -25,6 +36,8 @@ Rectangle {
         target: viewSwitch
         onSwitchView: {
             Core.switchMainView(view);
+            radioAlert.changeView();
+
         }
     }
 
@@ -69,7 +82,18 @@ Rectangle {
             opacity: 0
         }
 
+        /* Alert box */
+        RadioAlert {
+            z: 4
+            id: radioAlert
+            target: mainWindow
+            view: parent.selectedView
+            listView: listView
+        }
+
     }
+
+
     ParallelAnimation {
         id: switchViews
         NumberAnimation {
