@@ -83,6 +83,16 @@ Rectangle {
         }
         opacity: 1
 
+        MapCircle {
+	    color: "#80FF0000"
+            opacity: 0.1
+            radius: 300
+            center: Coordinate {
+                latitude: -8.05
+                longitude: -34.9
+            }
+	    border.width: 0
+       }
         mapType: Map.SatelliteMapDay
 
         MapMouseArea {

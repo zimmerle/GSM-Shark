@@ -68,6 +68,7 @@ signals:
     void stopScan();
     void startScan(QString);
     void radioStatus(int status);
+    void progress(int processed, int amount);
 
 protected slots:
     void scanFinished(void);

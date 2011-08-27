@@ -52,6 +52,7 @@ void ScanEngine::stopScan()
 void ScanEngine::missing(int amount)
 {
     m_stillMissing = amount;
+    emit progress (amount-m_stillMissing, amount);
 }
 
 void ScanEngine::startScan(QString channels)

@@ -18,6 +18,7 @@ Rectangle {
             mainWindow.width = width
             mainWindow.height = height
         }
+
         onRadioStatus: {
             if (status == 1)
             {
@@ -28,6 +29,14 @@ Rectangle {
                 radioAlert.radioOk();
             }
         }
+
+	onProgress: {
+		console.log("Processed: " + processed + " of: " + amount);
+	}
+
+	onScanFinished: {
+		radioAlert.radioOk();
+	}
 
     }
 

@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     QObject::connect(scanEngine, SIGNAL(scanFinished()), main, SLOT(scanFinished()));
     QObject::connect(scanEngine, SIGNAL(radioStatus(int)), main, SIGNAL(radioStatus(int)));
     QObject::connect(scanEngine, SIGNAL(radioStatus(int)), main, SLOT(radio(int)));
+    QObject::connect(scanEngine, SIGNAL(progress(int, int)), main, SIGNAL(progress(int, int)));
 
     QObject::connect(main, SIGNAL(startScan(QString)), scanEngine, SLOT(startScan(QString)));
     QObject::connect(main, SIGNAL(stopScan()), scanEngine, SLOT(stopScan()));

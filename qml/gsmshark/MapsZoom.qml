@@ -102,6 +102,7 @@ Rectangle {
             height: parent.height
 
             color: "white"
+	    radius: 8
 
             Text {
                 text: "Not ready yet!"

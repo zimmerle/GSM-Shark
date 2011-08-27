@@ -14,7 +14,7 @@ Rectangle {
     property string message: ''
     property string icon: ''
 
-    /* 0 == none, 1 == missing radio */
+    /* 0 == none, 1 == missing radio, 2 == progress bar */
     property int myState: 0
 
     onStateChanged: { this_thing.state = state }
@@ -27,6 +27,15 @@ Rectangle {
         title.text = "Radio not found!"
         changeView();
     }
+
+
+    function scanInProgress()
+{
+        myState = 2
+	icon.source = "qrc:/res/messagebox_warning.png";
+	title.text = "Scan in progress"
+	changeView();
+}
 
     function radioOk()
     {
@@ -109,22 +118,22 @@ Rectangle {
             Transition {
                 from: ""; to: "map"; reversible: true
                 ParallelAnimation {
-                    NumberAnimation { properties: "opacity"; duration: 200;  }
-                    ColorAnimation { duration: 300; }
+                    NumberAnimation { properties: "opacity,radius"; duration: 500;  }
+                    ColorAnimation { duration: 600; }
                 }
             },
             Transition {
                 from: ""; to: "list"; reversible: true
                 ParallelAnimation {
-                    NumberAnimation { properties: "opacity,y,height"; duration: 200;  }
-                    ColorAnimation { duration: 300; }
+                    NumberAnimation { properties: "opacity,y,height,radius"; duration: 500;  }
+                    ColorAnimation { duration: 600; }
                 }
             },
             Transition {
                 from: "map"; to: "list"; reversible: true
                 ParallelAnimation {
-                    NumberAnimation { properties: "opacity,x,y,width,height"; duration: 200; }
-                    ColorAnimation { duration: 300; }
+                    NumberAnimation { properties: "opacity,x,y,width,radius,height"; duration: 500; }
+                    ColorAnimation { duration: 600; }
                 }
             }
         ]
