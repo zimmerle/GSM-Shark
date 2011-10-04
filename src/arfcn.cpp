@@ -22,7 +22,7 @@
  */
 
 #include "arfcn.h"
-#include <QDebug>
+#include <QtCore/QDebug>
 
 
 Arfcn::Arfcn()

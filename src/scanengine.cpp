@@ -22,7 +22,7 @@
  */
 
 #include "scanengine.h"
-#include <QDebug>
+#include <QtCore/QDebug>
 
 ScanEngine::ScanEngine(QObject *parent) :
     QObject(parent),

@@ -22,20 +22,19 @@
  */
 
 #include "mainwin.h"
-#include <QDeclarativeView>
-#include <QDeclarativeContext>
-#include <QMainWindow>
-#include <QDeclarativeView>
-#include <QToolBar>
-#include <QStatusBar>
-#include <QString>
-#include <QHBoxLayout>
-#include <QPushButton>
-#include <QGroupBox>
-#include <QLabel>
-#include <QComboBox>
-#include <QLineEdit>
-
+#include <QtDeclarative/QDeclarativeView>
+#include <QtDeclarative/QDeclarativeContext>
+#include <QtGui/QMainWindow>
+#include <QtGui/QToolBar>
+#include <QtGui/QStatusBar>
+#include <QtCore/QString>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QPushButton>
+#include <QtGui/QGroupBox>
+#include <QtGui/QLabel>
+#include <QtGui/QComboBox>
+#include <QtGui/QLineEdit>
+#include <QtCore/QFile>
 
 #include "fakesegmentedbutton.h"
 #include "common.h"

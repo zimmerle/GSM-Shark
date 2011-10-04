@@ -1,7 +1,7 @@
 #ifndef RADIO_H
 #define RADIO_H
 
-#include <QObject>
+#include <QtCore/QObject>
 
 class Radio : public QObject
 {

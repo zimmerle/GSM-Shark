@@ -1,7 +1,7 @@
 #ifndef RADIOSTATUS_H
 #define RADIOSTATUS_H
 
-#include <QObject>
+#include <QtCore/QObject>
 
 class RadioStatus : public QObject
 {

@@ -24,9 +24,9 @@
 #ifndef GNURADIOWORKER_H
 #define GNURADIOWORKER_H
 
-#include <QObject>
-#include <QThread>
-#include <QDebug>
+#include <QtCore/QObject>
+#include <QtCore/QThread>
+#include <QtCore/QDebug>
 #include <gr_uhd_api.h>
 #include <gr_sync_block.h>
 

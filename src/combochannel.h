@@ -24,7 +24,7 @@
 #ifndef COMBOCHANNEL_H
 #define COMBOCHANNEL_H
 
-#include <QComboBox>
+#include <QtGui/QComboBox>
 
 class ComboChannel : public QComboBox
 {

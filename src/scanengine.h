@@ -24,9 +24,9 @@
 #ifndef SCANENGINE_H
 #define SCANENGINE_H
 
-#include <QObject>
-#include <QDebug>
-#include <QStringList>
+#include <QtCore/QObject>
+#include <QtCore/QDebug>
+#include <QtCore/QStringList>
 
 #include "radio.h"
 #include "gnuradioworker.h"

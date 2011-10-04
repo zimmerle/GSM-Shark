@@ -23,8 +23,8 @@
 
 #include "gnuradioworker.h"
 
-#include <QDateTime>
-#include <QDebug>
+#include <QtCore/QDateTime>
+#include <QtCore/QDebug>
 
 
 double GnuradioWorker::sampleRate = 571428;

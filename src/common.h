@@ -26,6 +26,7 @@
 
 #define GSMSHARK_VERSION "0.1 alpha"
 
+ #include <QtCore/QMetaType>
 
 namespace GsmShark
 {
