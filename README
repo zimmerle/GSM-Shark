@@ -1,7 +1,4 @@
 
-GSM SHARK
-ˆˆˆˆˆˆˆˆˆ
-
 Gsm Shark is a simple GSM network sniffer made to be very simple to use and
 easy to be extendable. Allowing new researches to get the GSM networks
 even more secure.
@@ -12,3 +9,35 @@ Patches are very welcomed, if you have any doubt on how to contribute
 contact the author at: felipe at zimmerle dot org.
 
 For more information about the project: http://www.gsmshark.ws
+
+
+HOW TO BUILD
+ˆˆˆˆˆˆˆˆˆˆˆˆ
+
+GSM-Shark is multi-platform, you can run it on Mac, Linux or even Windows
+(never tested on Windows but it should work). Before start the compilation
+please, make sure that you have all the necessary dependecies installed.
+They are:
+
+* uhd
+* gnuradio with uhd support
+* Qt 4.7.4+
+* cmake 
+* Qt Mobility 1.2.1+ ()
+  ( http://qt.gitorious.org/qt-mobility ) 
+* Qt Qml Desktop Components
+  ( http://qt.gitorious.org/qt-components/desktop )
+
+With the dependencies installed, just use cmake and make to build the code, 
+as following:
+
+$ cd /path/to/gsm-shark/
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+
+Those steps are sufficient to get the code compiled.
+
+
+
